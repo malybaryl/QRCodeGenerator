@@ -1,8 +1,8 @@
 darkmode:
 no
 width:
-559
+500
 height:
-532
+500
 language:
 EN

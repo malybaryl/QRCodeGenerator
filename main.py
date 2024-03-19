@@ -40,9 +40,9 @@ class App(ctk.CTk):
         # widgets
         self.entry_string = ctk.StringVar(value= entry_start_value)
         self.entry_string.trace('w', self.create_qr)
-        EntryField(self, config_file, self.entry_string)
         self.qr_image = QrImage(self)
         self.qr_image.update_image(self.tk_image)
+        EntryField(self, config_file, self.entry_string)
         
         # binds
         self.bind_all('<Configure>', self.trigger_bind_configure)
@@ -69,7 +69,7 @@ class App(ctk.CTk):
     def create_qr(self, *args):
         current_text = self.entry_string.get()
         if current_text:
-            self.raw_image = qrcode.make(current_text).resize((200,200))
+            self.raw_image = qrcode.make(current_text).resize((400,400))
             self.tk_image = ImageTk.PhotoImage(self.raw_image)
             self.qr_image.update_image(self.tk_image)
         else:
@@ -80,6 +80,8 @@ class App(ctk.CTk):
     def save_qr(self, event = ''):
         if self.raw_image:
             file_path = filedialog.asksaveasfilename()
+            
+        if file_path:
             self.raw_image.save(file_path + '.png')
             
         
@@ -87,7 +89,6 @@ class App(ctk.CTk):
          
 class ModeButton(ctk.CTkButton):
     def __init__(self, parent, config_file):
-         
         self.parent = parent
         self.config_file_ = config_file
           
@@ -97,9 +98,11 @@ class ModeButton(ctk.CTkButton):
         if scripts.variables.DARKMODE:
             self.animation_status = ctk.StringVar(value = 'dark')
             self.frame_index = 0
+            #scripts.variables.DARKMODE_CANVAS = True
         else:
             self.animation_status = ctk.StringVar(value = 'light')
             self.frame_index = self.animation_length
+            #scripts.variables.DARKMODE_CANVAS = False
         self.animation_status.trace('w', self.change_mode)
             
         super().__init__(
@@ -121,6 +124,8 @@ class ModeButton(ctk.CTkButton):
             ctk.set_appearance_mode('light')
             self.config_file_[1] = 'no'
             self.parent.import_config_file_from_other_class(self.config_file_)
+            scripts.variables.DARKMODE_CANVAS = False
+            #self.parent.qr_image.configure(bg= '#242424')
             
             
         if self.animation_status.get() == 'light':
@@ -128,7 +133,10 @@ class ModeButton(ctk.CTkButton):
             self.animation_status.set('backward')
             ctk.set_appearance_mode('dark')
             self.config_file_[1] = 'yes'
-            self.parent.import_config_file_from_other_class(self.config_file_)
+            self.parent.import_config_file_from_other_class(self.config_file_)  
+            scripts.variables.DARKMODE_CANVAS = True
+            #self.parent.qr_image.configure(bg= '#EBEBEB')
+            
             
             
         
@@ -175,35 +183,55 @@ class Button(ctk.CTkButton):
                 
 class EntryField(ctk.CTkFrame):
     def __init__(self, parent, config_file, entry_string):
+        
         super().__init__(parent,
                          fg_color= ('#007bc7','#4c00c7'),
                          border_width = 10,
                          border_color= ('#039eff','#3c029c'),
-                         corner_radius= 20,)
+                         corner_radius= 20)
+        self.anchor = 'nw'
+        self.y = 1
+        self.animate()
         
-        frame = ctk.CTkFrame(self, fg_color= 'transparent')
+        self.frame = ctk.CTkFrame(self, fg_color= 'transparent')
         
-        mode_button = ModeButton(frame, config_file)
-        entry = Entry(frame, entry_string)
-        button = Button(frame, parent)
         
+            
+        mode_button = ModeButton(self.frame, config_file)
+        entry = Entry(self.frame, entry_string)
+        button = Button(self.frame, parent)
+            
         mode_button.pack(side = 'left', padx = 2)
         entry.pack(side = 'left', padx = 2, expand = True, fill = 'both')
         button.pack(side = 'left', padx = 2)
+            
+        self.frame.place(relx = 0.5, rely = 0.3, anchor = 'center', relwidth = 0.8)
+            
+            
         
-        frame.place(relx = 0.5, rely = 0.3, anchor = 'center', relwidth = 0.8)
+        
+    def animate(self):
+        if self.y >= 0.8:
+            self.y -= 0.01
+            self.frame = ctk.CTkFrame(self, fg_color= 'transparent')
+            self.place(anchor = self.anchor, x= 0, rely = self.y, relwidth = 1, relheight = 0.4)
+            self.after(15, self.animate)
+        
+            
         
         
-        self.place(anchor = 'w', x = 0, rely = 1, relwidth = 1)
+            
+        
         
 class QrImage(tk.Canvas):
     def __init__(self, parent):
-        super().__init__(master= parent,
-                         bd = 0,
-                         highlightthickness= 0,
-                         relief= 'ridge')
         
-        self.place(relx = 0.5, rely = 0.4, width= 200, height=200, anchor= 'center')
+        super().__init__(master= parent,
+                            highlightthickness= 0,
+                            relief= 'ridge',
+                            bg= ('#EBEBEB'))
+        
+        self.place(relx = 0.5, rely = 0.4, width= 400, height=400, anchor= 'center')
         
     def update_image(self, image_tk):
         self.clear()
