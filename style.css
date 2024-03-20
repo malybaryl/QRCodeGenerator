@@ -1,0 +1,161 @@
+body {
+  background: #53AC84;
+  margin: 0;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+#languageHandler {
+  width: 100%;
+  background-color: #75BD9D;
+  color: whitesmoke;
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 10%;
+  padding-top: 0.5%;
+}
+
+#logo {
+  width: 100%;
+  height: 155px;
+  background-color: #75BD9D;
+  color: #0D6545;
+  font-size:300%;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 0;
+  letter-spacing: 3px;
+  border-bottom: 2px solid (0, 0, 0);
+  box-sizing: border-box;
+  padding-bottom: 0px;
+}
+
+#logoPL {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(42, 41, 41);
+  color: whitesmoke;
+  font-size: xx-large;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 0;
+  letter-spacing: 3px;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+#eng,
+#pol {
+  padding-bottom: 10px;
+  width: 25px;
+}
+
+#navbar {
+  padding-bottom: 1%;
+  width: 100%;
+  height: 70%;
+  background-color: #75BD9D;
+  color: black;
+  font-size: 9px;
+  padding-top: 1%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+}
+
+.nav {
+  text-decoration: none;
+  font-size: 9px;
+  color: rgb(2, 55, 245);
+}
+
+.nav:hover {
+  text-decoration: none;
+  font-size: 9px;
+  color: rgb(255, 255, 255);
+}
+
+#footer {
+  width: 100%;
+  height: 120%;
+  background-color: #75BD9D;
+  font-size: 14px;
+  text-align: center;
+  padding: 1%, 2%;
+  border-top: 2px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+#container {
+  margin: 0 auto;
+  background-color: #75BD9D;
+  color: #139364;
+  text-shadow: 1px 1px 1px black;
+  width: 90%;
+  max-width: 878px;
+  font-size: 30%; 
+  padding: 10px;
+  padding-left: 1%;
+  border-left: 1px solid rgb(116, 116, 116);
+  border-right: 1px solid rgb(116, 116, 116);
+  border-right: 1;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+
+#img01,
+#img02,
+#img03,
+#img04,
+#img05,
+#img06,
+#img07 {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  padding-right: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#versions_ {
+  font-size: small;
+  letter-spacing: 1px;
+}
+
+#download,
+#about,
+#features,
+#sourceCode,
+#authors,
+#license{
+  font-size: 26px;
+  color: #0D6545;
+  padding-left: 1%;
+  text-shadow: none;
+}
+
+#link {
+  text-decoration: none;
+  color: blue;
+}
+
+#link:hover {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+#end {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 26px;
+  text-align: center;
+  color: aqua;
+}
+

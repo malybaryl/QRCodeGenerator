@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Dungeon Crawler" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Crawler</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">  
+</head>
+<body>
+   
+    <div id="languageHandler">
+        <a href="index.html"><img id="eng" src="img/en.png" alt=""></a>
+        <a href="indexpl.html"><img id="pol" src="img/pl.png" alt=""></a>
+    </div>
+    <div id="logoPL">
+        Dungeon Crawler  
+        <div id="navbar">
+            <a class="nav" href="#WelcomeToDungeonCrawler">Witaj</a> | 
+            <a class="nav" href="#features">Funkcje</a> | 
+            <a class="nav" href="#howToPlay">Jak grać</a> | 
+            <a class="nav" href="#versions">Wersje</a> | 
+            <a class="nav" href="#configuration">Konfiguracja</a> | 
+            <a class="nav" href="#projectStructure">Struktura Projektu</a> | 
+            <a class="nav" href="#sourceCode">Kod źródłowy</a> | 
+            <a class="nav" href="#authors">Autorzy</a> | 
+            <a class="nav" href="#license">Licencja</a>
+        </div>
+    </div>
+    
+    <div id="container">
+        <div id="contents">
+            <h2 id="WelcomeToDungeonCrawler">WITAJ W DUNGEON CRAWLER - PYTHON'OWSKIEJ PRZYGODZIE Z UŻYCIEM PYGAME!</h2>
+                <img id="img01" src="img/01.png" alt="Opis"><br/>
+                Rozpocznij ekscytującą podróż przez tajemnicze lochy wypełnione zdradliwymi wrogami, 
+                ukrytymi skarbami i epickimi bitwami w tej klasycznej grze dungeon crawler stworzonej w Pythonie
+                i Pygame.
+            <h3 id="features">Funkcje:</h3>
+                <br>- Postać Gracza: </br>
+                    <br>Opanuj odważnego bohatera uzbrojonego w broń dystansową, poruszającego się po wymagających lochach.</br>
+                    <img id="img02" src="img/02.png" alt="">
+                </br>- Przeciwnicy:</br> 
+                    </br>Zróżnicowana gama wrogów, od groźnych orków po potężnych bossów, z unikalnymi wyzwaniami i strategiami.</br>
+                    <img id="img03" src="img/03.png" alt="">
+                <br>- System Walki: </br>
+                    </br>Wejdź w ekscytującą walkę, wykorzystując łuk, aby pokonać wrogów, unikając ich ataków. Opanuj sztukę precyzji i czasu, aby wyjść zwycięsko.</br>
+                <br>- Zbieranie Przedmiotów:</br>
+                    </br>Zbieraj cenne łupy, takie jak złoto, mikstury zdrowia i inne przedmioty, które pomogą ci w niebezpiecznej podróży.</br>
+                    <img id="img04" src="img/04.png" alt="">
+                <br>- HUD (Interfejs gracza):</br>
+                    </br>Śledź swoje istotne statystyki, w tym zdrowie, złoto i 
+                    więcej, za pomocą przyjaznego dla użytkownika interfejsu.</br>
+                    <img id="img05" src="img/05.png" alt="">
+                <br>- Menu:</br>
+                    </br>Poruszaj się po prostym i intuicyjnym menu głównym, które pozwala rozpocząć nową grę i dostosować ustawienia z łatwością.</br>
+                    <img id="img06" src="img/06.png" alt="">
+                <br>- Ustawienia:</br>
+                    </br>Twoje ustawienia są zapisywane, zapewniając płynne doświadczenie z grą za każdym razem, gdy wracasz do przygody.</br>
+                    <img id="img07" src="img/07.png" alt="">
+            <h3 id="howToPlay">Jak grać:</h3>
+            1. <a id="link" href="https://drive.google.com/drive/u/1/folders/1Uz3CJjd0bmCYxR7gjI6tQjMSmoOglLof">Pobierz Dungeon Crawler</a></br>
+            2. W prawym górnym rogu kliknij "Pobierz wszystko" lub zaznacz wszystkie pliki, kliknij prawym przyciskiem myszy i wybierz "Pobierz".</br>
+            3. Rozpakuj grę.</br>
+            4. Uruchom plik main.exe.</br>
+                <h3 id="versions">Wersje:</h3>
+                    <div id="versions_">
+                        <br>0.0.1:</br>
+                        Demo przedstawiające główne menu, ustawienia, napisy końcowe oraz krótki poziom gry z orkami i potężnym Szamanem Orków Bossem. Chociaż to tylko krótki wgląd, pokazuje on ekscytujące możliwości gry.</br>
+                        <br>0.0.2:</br>
+                        - ikona gry</br>
+                        - możliwość gry w formie pliku wykonywalnego</br>
+                </div>
+            <h3 id="configuration">Konfiguracja:</h3>
+                <br>Dostosuj swoje ustawienai w grze, dostosowując takie rzeczy jak rozdzielczość ekranu, dźwięk i 
+                tryb pełnoekranowy zarówno w grze, jak i edytując plik config/config.txt.</br>
+            <h3 id="projectStructure">Struktura Projektu:</h3>
+                <br>Dobrze zorganizowana struktura projektu z folderami zawierającymi moduły i klasy do 
+                postaci, broni, tła, wrogów, HUDu, przedmiotów, muzyki i menu. Poziomy gry są zdefiniowane w plikach CSV, a zasoby, takie jak grafika i pliki dźwiękowe, są starannie zorganizowane.</br>
+            <h3 id="sourceCode">Kod źródłowy:</h3>
+                </br> Kod źródłowy jest dostępny na moim Githubie: <a id="link" href="https://github.com/malybaryl/DungeonCrawler">DungeonCrawler</a>
+            <h3 id="authors">Autorzy:</h3>
+                <br>Kacper Baryłowicz ("malybaryl"): Kreatywny umysł stojący za skryptami i znaczną częścią grafik gry. Zachęcam do Grania w grę!</br>
+            <h3 id="license">Licencja:</h3>
+                <br>Skrypty są udostępnione do darmowego użytku, z prośbą o zachowanie ostrożności, ponieważ niektóre zasoby są z zewnętrznych witryn, a dodatkowe informacje można znaleźć w pliku credits/credits.txt.</br>
+            <h3 id="end">Zanurz się w świecie Dungeon Crawler, gdzie przygoda czeka za każdym rogu!</h3>
+        </div>
+        <div id="footer">
+            <h6>2023 &copy; Kacper Baryłowicz. Kontakt: kacper.barylowicz@outlook.com. Więcej informacji można znaleźć na moim Githubie <a href="https://github.com/malybaryl">malybaryl</a>.
+            </h6>
+        </div>
+    </div>
+</body>
+</html>
